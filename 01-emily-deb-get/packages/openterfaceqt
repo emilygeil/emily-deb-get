@@ -1,0 +1,9 @@
+DEFVER=1
+get_github_releases "TechxArtisanStudio/Openterface_QT" "latest"
+if [ "${ACTION}" != prettylist ]; then
+    URL="$(grep -m 1 "browser_download_url.*\.deb\"" "${CACHE_FILE}" | cut -d <delimiter> -f <field>)"
+    VERSION_PUBLISHED="$(cut -d <delimiter> -f <field> <<< "${URL}")"
+fi
+PRETTY_NAME="Openterface Mini-KVM QT version"
+WEBSITE="https://openterface.com/"
+SUMMARY="OpenterfaceQT Mini-KVM Linux Edition"
